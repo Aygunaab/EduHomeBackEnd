@@ -13,5 +13,8 @@ namespace EduHome.Data
         {
         }
         public DbSet<Slider> Sliders { get; set; }
+        public DbSet<TextArea> Texts { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<CourseFeature> CourseFeatures { get; set; }
     }
 }
