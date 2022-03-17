@@ -5,6 +5,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20220316162804_CreateCategoryTble.cs" />
+    <Compile Remove="Migrations\20220316162804_CreateCategoryTble.Designer.cs" />
+    <Compile Remove="Migrations\20220316164744_CreatedCourseFeatureTable.cs" />
+    <Compile Remove="Migrations\20220316164744_CreatedCourseFeatureTable.Designer.cs" />
+    <Compile Remove="Migrations\20220317152837_AddIdentityTabe.cs" />
+    <Compile Remove="Migrations\20220317152837_AddIdentityTabe.Designer.cs" />
+    <Compile Remove="Migrations\20220317153936_UpdateUserTable.cs" />
+    <Compile Remove="Migrations\20220317153936_UpdateUserTable.Designer.cs" />
+    <Compile Remove="Migrations\20220317165319_AddPositionColumnUserTable.cs" />
+    <Compile Remove="Migrations\20220317165319_AddPositionColumnUserTable.Designer.cs" />
+    <Compile Remove="Migrations\20220317183128_clear.cs" />
+    <Compile Remove="Migrations\20220317183128_clear.Designer.cs" />
+    <Compile Remove="Migrations\20220317183208_CreateCoursesTable.cs" />
+    <Compile Remove="Migrations\20220317183208_CreateCoursesTable.Designer.cs" />
+    <Compile Remove="Migrations\20220317184111_CreateUserTable.cs" />
+    <Compile Remove="Migrations\20220317184111_CreateUserTable.Designer.cs" />
+    <Compile Remove="Migrations\20220317185200_createCategoryAndCoursTables.cs" />
+    <Compile Remove="Migrations\20220317185200_createCategoryAndCoursTables.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.23" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.23" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.23" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.23">

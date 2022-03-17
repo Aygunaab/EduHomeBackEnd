@@ -9,9 +9,8 @@ namespace EduHome.Models
     public class Category
     {
         public int Id { get; set; }
-        [Required(ErrorMessage = "Bos qoyma")]
-        [StringLength(maximumLength: 20)]
-        public string  Name { get; set; }
-        public double? Count { get; set; }
+        [Required]
+        public string Name { get; set; }
+        
     }
 }

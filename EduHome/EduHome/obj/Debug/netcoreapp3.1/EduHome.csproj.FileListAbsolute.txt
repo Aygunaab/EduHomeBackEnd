@@ -153,3 +153,10 @@ C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcore
 C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Slider\Create.cshtml.g.cs
 C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Slider\Delete.cshtml.g.cs
 C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Slider\Update.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Course\Index.cshtml.g.cs
