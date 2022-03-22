@@ -23,9 +23,26 @@
     <Compile Remove="Migrations\20220317184111_CreateUserTable.Designer.cs" />
     <Compile Remove="Migrations\20220317185200_createCategoryAndCoursTables.cs" />
     <Compile Remove="Migrations\20220317185200_createCategoryAndCoursTables.Designer.cs" />
+    <Compile Remove="Migrations\20220318083315_createfeatureTable.cs" />
+    <Compile Remove="Migrations\20220318083315_createfeatureTable.Designer.cs" />
+    <Compile Remove="Migrations\20220318083646_CreateFeatreTable.cs" />
+    <Compile Remove="Migrations\20220318083646_CreateFeatreTable.Designer.cs" />
+    <Compile Remove="Migrations\20220318084634_UpdateFeaturetable.cs" />
+    <Compile Remove="Migrations\20220318084634_UpdateFeaturetable.Designer.cs" />
+    <Compile Remove="Migrations\20220318121129_CreateSpeakerTable.cs" />
+    <Compile Remove="Migrations\20220318121129_CreateSpeakerTable.Designer.cs" />
+    <Compile Remove="Migrations\20220318143651_UpdateTable.cs" />
+    <Compile Remove="Migrations\20220318143651_UpdateTable.Designer.cs" />
+    <Compile Remove="Migrations\20220320020333_EntityTable.cs" />
+    <Compile Remove="Migrations\20220320020333_EntityTable.Designer.cs" />
+    <Compile Remove="Migrations\20220322151824_CreateCommentTable.cs" />
+    <Compile Remove="Migrations\20220322151824_CreateCommentTable.Designer.cs" />
+    <Compile Remove="Migrations\20220322152049_UpdateTable.cs" />
+    <Compile Remove="Migrations\20220322152049_UpdateTable.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MailKit" Version="3.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.23" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.23" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.23" />
@@ -34,6 +51,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="MimeKit" Version="3.1.1" />
   </ItemGroup>
 
   <ItemGroup>

@@ -51,9 +51,16 @@
                                 </a>
                             </div>
                             <div class="course-content">
-                                <h3><a href="course-details.html">@item.Title</a></h3>
+                                @foreach (var category in item.CourseCategories)
+                                {
+                                    <h3><a href="course-details.html">@category.Category.Name</a></h3>
+                                }
+
+
+
+
                                 <p>@item.courtText</p>
-                                <a class="default-btn" href="course-details.html">read more</a>
+                                <a class="default-btn" asp-controller="course" asp-action="detail" asp-route-id="@item.Id">read more</a>
                             </div>
                         </div>
                     </div>

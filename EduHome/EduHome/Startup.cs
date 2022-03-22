@@ -1,6 +1,8 @@
 using EduHome.Constants;
 using EduHome.Data;
 using EduHome.Models;
+using EduHome.Services;
+using EduHome.Settings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -42,12 +44,15 @@ namespace EduHome
                 options.User.RequireUniqueEmail = true;
                 options.SignIn.RequireConfirmedEmail = true;
             }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
+            services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
+            services.AddTransient<IMailService, Services.MailService>();
             services.AddControllersWithViews();
             services.AddDbContext<AppDbContext>(option => {
                 option.UseSqlServer(Configuration.GetConnectionString("Default"));
 
             });
             FileConstants.ImagePath = Path.Combine(_env.WebRootPath, "img", "slider");
+       
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -160,3 +160,15 @@ C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcore
 C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
 C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Course\Index.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Course\Detail.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Event\Index.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Event\Detail.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\About\Index.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\User\Index.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\User\GetRoles.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\User\AddRole.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\User\ChangePassword.cshtml.g.cs

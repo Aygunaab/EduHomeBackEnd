@@ -43,8 +43,15 @@
                     <div class="col-md-4 col-sm-4">
                         <div class="header-top-right text-end">
                             <ul>
-                                <li><a href="~/login.html">login</a></li>
-                                <li><a href="~/signup.html">signup</a></li>
+                                @if (!User.Identity.IsAuthenticated)
+                                {
+                                    <li> <a asp-controller="Account" asp-action="Login">Login</a></li>
+                                }
+                                else
+                                {
+                                    <li><a asp-controller="Account" asp-action="Logout">Logout</a></li>
+                                }
+                                <li><a asp-controller="Account" asp-action="register">Register</a></li>
                             </ul>
                         </div>
                     </div>
@@ -143,6 +150,7 @@
         </div>
     </header>
     <!-- Header Area End -->
+   
 
     @RenderBody()
     <!-- Subscribe Start -->

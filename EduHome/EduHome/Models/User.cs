@@ -11,5 +11,7 @@ namespace EduHome.Models
         public string FulName { get; set; }
         public int Age { get; set; }
         public string Position { get; set; }
+        public bool IsActive { get; internal set; }
+        public List<Comment>Comments { get; set; }
     }
 }

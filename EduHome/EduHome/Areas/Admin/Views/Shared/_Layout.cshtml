@@ -182,8 +182,21 @@
                         </a>
                         <div class="collapse" id="ui-basic">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link"  asp-controller="slider" asp-action="create">Create new slider</a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-controller="slider" asp-action="create">Create new slider</a></li>
                                 <li class="nav-item"> <a class="nav-link" asp-controller="slider" asp-action="index"> Slider list</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="~/Admin/#ui-basic1" aria-expanded="false" aria-controls="ui-basic1">
+                            <i class="mdi mdi-circle-outline menu-icon"></i>
+                            <span class="menu-title">User</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic1">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" asp-controller="user" asp-action="create">Create new User</a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-controller="user" asp-action="index"> User list</a></li>
                             </ul>
                         </div>
                     </li>
@@ -220,10 +233,8 @@
                         <div class="collapse" id="auth">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> <a class="nav-link" href="~/Admin/pages/samples/login.html"> Login </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="~/Admin/pages/samples/login-2.html"> Login 2 </a></li>
                                 <li class="nav-item"> <a class="nav-link" href="~/Admin/pages/samples/register.html"> Register </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="~/Admin/pages/samples/register-2.html"> Register 2 </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="~/Admin/pages/samples/lock-screen.html"> Lockscreen </a></li>
+
                             </ul>
                         </div>
                     </li>
