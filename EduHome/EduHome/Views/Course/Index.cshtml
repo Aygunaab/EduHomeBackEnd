@@ -1,26 +1,10 @@
 ﻿@model List<Course>
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "courses";
 }
 
 
-    <!-- Banner Area Start -->
-    <div class="banner-area-wrapper">
-        <div class="banner-area text-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="banner-content-wrapper">
-                            <div class="banner-content">
-                                <h2>courses</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Banner Area End -->
+   
     <!-- Course Start -->
     <div class="course-area pt-150 pb-150">
         <div class="container">
@@ -38,34 +22,7 @@
                 </div>
             </div>
             <div class="row">
-                @foreach (var item in Model)
-                {
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-course mb-70">
-                            <div class="course-img">
-                                <a href="course-details.html">
-                                    <img src="~/img/course/@item.Image" alt="course">
-                                    <div class="course-hover">
-                                        <i class="fa fa-link"></i>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="course-content">
-                                @foreach (var category in item.CourseCategories)
-                                {
-                                    <h3><a href="course-details.html">@category.Category.Name</a></h3>
-                                }
-
-
-
-
-                                <p>@item.courtText</p>
-                                <a class="default-btn" asp-controller="course" asp-action="detail" asp-route-id="@item.Id">read more</a>
-                            </div>
-                        </div>
-                    </div>
-                }
-
+             @await Component.InvokeAsync("Course");
             </div>
         </div>
     </div>

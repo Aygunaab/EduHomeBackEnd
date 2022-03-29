@@ -172,3 +172,15 @@ C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcore
 C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\User\GetRoles.cshtml.g.cs
 C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\User\AddRole.cshtml.g.cs
 C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\User\ChangePassword.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Course\Default.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\TestimonialSlider\Default.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Teacher\Index.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Teacher\Detail.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Blog\Index.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Blog\Default.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Blog\Detail.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\SidebarDetailRight\Default.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Blog\Index.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Blog\Create.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Blog\Delete.cshtml.g.cs
+C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Blog\Update.cshtml.g.cs

@@ -24,7 +24,7 @@ namespace EduHome.Data
                 await _roleManager.CreateAsync(new IdentityRole("Admin"));
                 await _roleManager.CreateAsync(new IdentityRole("Moderator"));
                 await _roleManager.CreateAsync(new IdentityRole("Teacher"));
-                await _roleManager.CreateAsync(new IdentityRole("Student"));
+                await _roleManager.CreateAsync(new IdentityRole("Customer"));
             }
         }
     }

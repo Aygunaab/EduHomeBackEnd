@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace EduHome.Controllers
 {
+
     public class CourseController : Controller
     {
         private readonly AppDbContext _context;
@@ -23,13 +24,10 @@ namespace EduHome.Controllers
             _userManager = userManager;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
 
-            var coursecat = await _context.Courses.Include(c => c.CourseCategories).ThenInclude(cc => cc.Category).ToListAsync();
-
-           
-            return View(coursecat);
+            return View();
         }
        public IActionResult Detail(int Id,int CategoryId)
         {

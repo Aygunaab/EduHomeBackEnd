@@ -39,6 +39,46 @@
     <Compile Remove="Migrations\20220322151824_CreateCommentTable.Designer.cs" />
     <Compile Remove="Migrations\20220322152049_UpdateTable.cs" />
     <Compile Remove="Migrations\20220322152049_UpdateTable.Designer.cs" />
+    <Compile Remove="Migrations\20220324183502_CreateTestSliderTable.cs" />
+    <Compile Remove="Migrations\20220324183502_CreateTestSliderTable.Designer.cs" />
+    <Compile Remove="Migrations\20220328084620_CreatePosttable.cs" />
+    <Compile Remove="Migrations\20220328084620_CreatePosttable.Designer.cs" />
+    <Compile Remove="Migrations\20220328084842_CreateBlogTable.cs" />
+    <Compile Remove="Migrations\20220328084842_CreateBlogTable.Designer.cs" />
+    <Compile Remove="Migrations\20220328085054_CreateBlogTable.cs" />
+    <Compile Remove="Migrations\20220328085054_CreateBlogTable.Designer.cs" />
+    <Compile Remove="Migrations\20220328085419_createBlogtable.cs" />
+    <Compile Remove="Migrations\20220328085419_createBlogtable.Designer.cs" />
+    <Compile Remove="Migrations\20220328085646_CreateBlogtable.cs" />
+    <Compile Remove="Migrations\20220328085646_CreateBlogtable.Designer.cs" />
+    <Compile Remove="Migrations\20220328090103_CreateBlogTable.cs" />
+    <Compile Remove="Migrations\20220328090103_CreateBlogTable.Designer.cs" />
+    <Compile Remove="Migrations\20220328161800_BlodIdColumnAdd.cs" />
+    <Compile Remove="Migrations\20220328161800_BlodIdColumnAdd.Designer.cs" />
+    <Compile Remove="Migrations\20220328163508_createBlogTable.cs" />
+    <Compile Remove="Migrations\20220328163508_createBlogTable.Designer.cs" />
+    <Compile Remove="Migrations\20220328163936_createB%3bogTable.cs" />
+    <Compile Remove="Migrations\20220328163936_createB%3bogTable.Designer.cs" />
+    <Compile Remove="Migrations\20220328164322_CreateBlogTable.cs" />
+    <Compile Remove="Migrations\20220328164322_CreateBlogTable.Designer.cs" />
+    <Compile Remove="Migrations\20220328165310_CreateBlogTable.cs" />
+    <Compile Remove="Migrations\20220328165310_CreateBlogTable.Designer.cs" />
+    <Compile Remove="Migrations\20220328165441_updateBlogTable.cs" />
+    <Compile Remove="Migrations\20220328165441_updateBlogTable.Designer.cs" />
+    <Compile Remove="Migrations\20220328165802_updateCommentTableBlog.cs" />
+    <Compile Remove="Migrations\20220328165802_updateCommentTableBlog.Designer.cs" />
+    <Compile Remove="Migrations\20220328170547_CreatePostTale.cs" />
+    <Compile Remove="Migrations\20220328170547_CreatePostTale.Designer.cs" />
+    <Compile Remove="Migrations\20220328171042_CreatePOstTable.cs" />
+    <Compile Remove="Migrations\20220328171042_CreatePOstTable.Designer.cs" />
+    <Compile Remove="Migrations\20220328171218_UpdatePostTable.cs" />
+    <Compile Remove="Migrations\20220328171218_UpdatePostTable.Designer.cs" />
+    <Compile Remove="Migrations\20220329040818_AddPostTable.cs" />
+    <Compile Remove="Migrations\20220329040818_AddPostTable.Designer.cs" />
+    <Compile Remove="Migrations\20220329041411_CreatePostCommentTable.cs" />
+    <Compile Remove="Migrations\20220329041411_CreatePostCommentTable.Designer.cs" />
+    <Compile Remove="Migrations\20220329041511_AddPostCommentTable.cs" />
+    <Compile Remove="Migrations\20220329041511_AddPostCommentTable.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

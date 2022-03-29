@@ -40,8 +40,15 @@ using EduHome.ViewModel;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "C:\Users\Admin\OneDrive\Desktop\EduHomeBackEnd\EduHome\EduHome\Areas\Admin\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2613b528d7cbfcdef161ce8fee47a757678289c1", @"/Areas/Admin/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e1550dce583f35c813278959c828fb70dbe19873", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d75ac9c1c1db4e9432040027be010f03f1f8a6ba", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("nav-link active"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -140,7 +147,7 @@ using EduHome.ViewModel;
                     <div class=""card-body dashboard-tabs p-0"">
                         <ul class=""nav nav-tab");
             WriteLiteral("s px-4\" role=\"tablist\">\r\n                            <li class=\"nav-item\">\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c114358", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c114577", async() => {
                 WriteLiteral("Overview");
             }
             );
@@ -161,7 +168,7 @@ using EduHome.ViewModel;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                            </li>\r\n                            <li class=\"nav-item\">\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c116058", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c116277", async() => {
                 WriteLiteral("Sales");
             }
             );
@@ -182,7 +189,7 @@ using EduHome.ViewModel;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                            </li>\r\n                            <li class=\"nav-item\">\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c117757", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c117976", async() => {
                 WriteLiteral("Purchases");
             }
             );
@@ -214,7 +221,7 @@ using EduHome.ViewModel;
                                             <small class=""mb-1 text-muted"">Start date</small>
                                             <div class=""dropdown"">
                                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c120268", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c120487", async() => {
                 WriteLiteral("\r\n                                                    <h5 class=\"mb-0 d-inline-block\">26 Jul 2018</h5>\r\n                                                ");
             }
             );
@@ -235,7 +242,7 @@ using EduHome.ViewModel;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuLinkA\">\r\n                                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c122172", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c122391", async() => {
                 WriteLiteral("12 Aug 2018");
             }
             );
@@ -251,7 +258,7 @@ using EduHome.ViewModel;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c123390", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c123609", async() => {
                 WriteLiteral("22 Sep 2018");
             }
             );
@@ -267,7 +274,7 @@ using EduHome.ViewModel;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c124608", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c124827", async() => {
                 WriteLiteral("21 Oct 2018");
             }
             );
@@ -328,7 +335,7 @@ using EduHome.ViewModel;
                                             <small class=""mb-1 text-muted"">Start date</small>
                                             <div class=""dropdown"">
                                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c129365", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c129584", async() => {
                 WriteLiteral("\r\n                                                    <h5 class=\"mb-0 d-inline-block\">26 Jul 2018</h5>\r\n                                                ");
             }
             );
@@ -349,7 +356,7 @@ using EduHome.ViewModel;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuLinkA\">\r\n                                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c131269", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c131488", async() => {
                 WriteLiteral("12 Aug 2018");
             }
             );
@@ -365,7 +372,7 @@ using EduHome.ViewModel;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c132487", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c132706", async() => {
                 WriteLiteral("22 Sep 2018");
             }
             );
@@ -381,7 +388,7 @@ using EduHome.ViewModel;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c133705", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c133924", async() => {
                 WriteLiteral("21 Oct 2018");
             }
             );
@@ -442,7 +449,7 @@ using EduHome.ViewModel;
                                             <small class=""mb-1 text-muted"">Start date</small>
                                             <div class=""dropdown"">
                                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c138470", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c138689", async() => {
                 WriteLiteral("\r\n                                                    <h5 class=\"mb-0 d-inline-block\">26 Jul 2018</h5>\r\n                                                ");
             }
             );
@@ -463,7 +470,7 @@ using EduHome.ViewModel;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuLinkA\">\r\n                                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c140374", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c140593", async() => {
                 WriteLiteral("12 Aug 2018");
             }
             );
@@ -479,7 +486,7 @@ using EduHome.ViewModel;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c141592", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c141811", async() => {
                 WriteLiteral("22 Sep 2018");
             }
             );
@@ -495,7 +502,7 @@ using EduHome.ViewModel;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c142810", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2613b528d7cbfcdef161ce8fee47a757678289c143029", async() => {
                 WriteLiteral("21 Oct 2018");
             }
             );

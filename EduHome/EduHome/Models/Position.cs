@@ -10,5 +10,7 @@ namespace EduHome.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public List<Speaker> Speakers { get; set; }
+        public List<TestimonialSlider> TestimonialSliders{ get; set; }
+        public List<Teacher> Teachers { get; set; }
     }
 }

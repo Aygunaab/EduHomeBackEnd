@@ -1,25 +1,11 @@
-﻿
+﻿@model AboutVm
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "About";
+   
 }
 
 
-<div class="banner-area-wrapper">
-    <div class="banner-area text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="banner-content-wrapper">
-                        <div class="banner-content">
-                            <h2>about us</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Banner Area End -->
+
 <!-- About Start -->
 <div class="about-area pt-145 pb-155">
     <div class="container">
@@ -34,7 +20,7 @@
             </div>
             <div class="col-md-6">
                 <div class="about-img">
-                    <img src="img/about/about.png" alt="about">
+                    <img src="~/img/about/about.png" alt="about">
                 </div>
             </div>
         </div>
@@ -53,101 +39,33 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-teacher">
-                    <div class="single-teacher-img">
-                        <a href="teacher-details.html"><img src="img/teacher/teacher1.jpg" alt="teacher"></a>
-                    </div>
-                    <div class="single-teacher-content text-center">
-                        <h2><a href="teacher-details.html">STUART KELVIN</a></h2>
-                        <h4>Associate Professor</h4>
-                        <ul>
-                            <li><a href="https://www.facebook.com/devitems/?ref=bookmarks"><i class="zmdi zmdi-facebook"></i></a></li>
-                            <li><a href="https://www.pinterest.com/devitemsllc/"><i class="zmdi zmdi-pinterest"></i></a></li>
-                            <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
-                            <li><a href="https://twitter.com/devitemsllc"><i class="zmdi zmdi-twitter"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-teacher">
-                    <div class="single-teacher-img">
-                        <a href="teacher-details.html"><img src="img/teacher/teacher2.jpg" alt="teacher"></a>
-                    </div>
-                    <div class="single-teacher-content text-center">
-                        <h2><a href="teacher-details.html">eamily cristian</a></h2>
-                        <h4>Associate Professor</h4>
-                        <ul>
-                            <li><a href="https://www.facebook.com/devitems/?ref=bookmarks"><i class="zmdi zmdi-facebook"></i></a></li>
-                            <li><a href="https://www.pinterest.com/devitemsllc/"><i class="zmdi zmdi-pinterest"></i></a></li>
-                            <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
-                            <li><a href="https://twitter.com/devitemsllc"><i class="zmdi zmdi-twitter"></i></a></li>
-                        </ul>
+            @foreach (var item in Model.Teachers)
+            {
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-teacher">
+                        <div class="single-teacher-img">
+                            <a href="teacher-details.html"><img src="img/teacher/@item.Image" alt="teacher"></a>
+                        </div>
+                        <div class="single-teacher-content text-center">
+                            <h2><a asp-controller="Teacher" asp-action="Detail" asp-route-id="@item.Id"> @item.Fullname </a></h2>
+                            <h4>Associate Professor</h4>
+                            <ul>
+                                <li><a href="@item.Social.FacebookLink"><i class="zmdi zmdi-facebook"></i></a></li>
+                                <li><a href="@item.Social.PinterestLink"><i class="zmdi zmdi-pinterest"></i></a></li>
+                                <li><a href="@item.Social.VimeoLink"><i class="zmdi zmdi-vimeo"></i></a></li>
+                                <li><a href="@item.Social.TwitterLink"><i class="zmdi zmdi-twitter"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-teacher">
-                    <div class="single-teacher-img">
-                        <a href="teacher-details.html"><img src="img/teacher/teacher3.jpg" alt="teacher"></a>
-                    </div>
-                    <div class="single-teacher-content text-center">
-                        <h2><a href="teacher-details.html">kevin williams</a></h2>
-                        <h4>Associate Professor</h4>
-                        <ul>
-                            <li><a href="https://www.facebook.com/devitems/?ref=bookmarks"><i class="zmdi zmdi-facebook"></i></a></li>
-                            <li><a href="https://www.pinterest.com/devitemsllc/"><i class="zmdi zmdi-pinterest"></i></a></li>
-                            <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
-                            <li><a href="https://twitter.com/devitemsllc"><i class="zmdi zmdi-twitter"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-teacher">
-                    <div class="single-teacher-img">
-                        <a href="teacher-details.html"><img src="img/teacher/teacher4.jpg" alt="teacher"></a>
-                    </div>
-                    <div class="single-teacher-content text-center">
-                        <h2><a href="teacher-details.html">salina gomaze</a></h2>
-                        <h4>Associate Professor</h4>
-                        <ul>
-                            <li><a href="https://www.facebook.com/devitems/?ref=bookmarks"><i class="zmdi zmdi-facebook"></i></a></li>
-                            <li><a href="https://www.pinterest.com/devitemsllc/"><i class="zmdi zmdi-pinterest"></i></a></li>
-                            <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
-                            <li><a href="https://twitter.com/devitemsllc"><i class="zmdi zmdi-twitter"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            }
+
         </div>
     </div>
 </div>
 <!-- Teacher End -->
 <!-- Testimonial Area Start -->
-<div class="testimonial-area pt-110 pb-105 text-center">
-    <div class="container">
-        <div class="row">
-            <div class="testimonial-owl owl-theme owl-carousel">
-                <div class="col-lg-8 offset-lg-2">
-                    <div class="single-testimonial">
-                        <div class="testimonial-info">
-                            <div class="testimonial-img">
-                                <img src="img/testimonial/testimonial.jpg" alt="testimonial">
-                            </div>
-                            <div class="testimonial-content">
-                                <p>I must explain to you how all this mistaken idea of denoung pleure and praising pain was born and I will give you a coete account of the system, and expound the actual</p>
-                                <h4>David Morgan</h4>
-                                <h5>Student, CSE</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+@await Component.InvokeAsync("TestimonialSlider");
 <!-- Testimonial Area End -->
 <!-- Notice Start -->
 <section class="notice-area two pt-140 pb-100">

@@ -26,7 +26,6 @@ namespace EduHome.Controllers
             {
                 Sliders = await _context.Sliders.OrderBy(s => s.Order).Take(3).ToListAsync(),
                
-
             };
             return View(model);
         }

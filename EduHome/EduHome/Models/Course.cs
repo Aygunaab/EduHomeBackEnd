@@ -17,7 +17,7 @@ namespace EduHome.Models
         public string Title { get; set; }
         [Required, MaxLength(250)]
         public string courtText { get; set; }
-        [Required, MaxLength(700)]
+        [Required]
         public string LongText { get; set; }
         public Feature Feature { get; set; }
 

@@ -1,0 +1,68 @@
+﻿@model BlogDetailVm
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<!-- Blog Start -->
+<div class="blog-details-area pt-150 pb-140">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="blog-details">
+                    <div class="blog-details-img">
+                        <img style="width:100%;" src="~/img/slider/@Model.Posts.Image" alt="blog-details">
+                    </div>
+                    <div class="blog-details-content">
+                        <h2>@Model.Posts.Title</h2>
+                        <h6>By @Model.Posts.User.UserName/   /  <i class="fa fa-comments-o"></i> @Model.Posts.BlogComments.Count</h6>
+                        <p>@Html.Raw(Model.Posts.Description)</p>
+                    </div>
+                    @foreach (var comment in Model.Posts.BlogComments)
+                    {
+                        <div class="col-12 d-flex pb-2">
+                            <div class="personImg">
+                                <img style="width:100px;height:100px;border-radius:100%;" src="~/img/teacher/teacher1.jpg" alt="" />
+                            </div>
+                            <div class="personBody ms-5">
+                                <div class="person-name d-flex ">
+                                    <p>@comment.User.FulName</p>
+                                    <p class="mx-2">@comment.CreatedAt.ToString("dd.MM.yyyy")</p>
+                                </div>
+                                <div class="person-description my-3">
+
+                                    <p style="font-family: Lora, serif">
+                                        @comment.Description
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <div class="reply-area">
+                            <h3>LEAVE A REPLY</h3>
+                            <p>I must explain to you how all this a mistaken idea of ncing great explorer of the rut<br> the is lder of human happinescias unde omnis iste natus error sit volptatem </p>
+                            <form id="contact-form" asp-controller="Blog" asp-action="AddComment" asp-route-id="@Model.Posts.Id " method="post">
+                                <div class="row">
+
+
+                                    <div class="col-md-12">
+                                        <p>Subject</p>
+                                        <input asp-for="@Model.Comment.Subject" type="text" id="subject">
+                                        <p>Massage</p>
+                                        <textarea asp-for="@Model.Comment.Description" id="message" cols="15" rows="10"></textarea>
+                                    </div>
+                                </div>
+                                <button type="submit"><span>send message</span></button>
+                                <p class="form-messege"></p>
+                            </form>
+                        </div>
+                    }
+                </div>
+            </div>
+            @await Component.InvokeAsync("SidebarDetailRight");
+        </div>
+    </div>
+</div>
+<!-- Blog End -->
