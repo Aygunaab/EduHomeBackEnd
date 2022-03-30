@@ -1,4 +1,138 @@
 ﻿@model SidebarDetailVm
+
+
+@if (ViewData["Title"] == " Courses Details")
+{
+    <div class="col-lg-4">
+        <div class="blog-sidebar right">
+            <div class="single-blog-widget mb-50">
+                <h3>search</h3>
+                <div class="blog-search">
+                    <form id="search" action="#">
+                        <input type="search" placeholder="Search..." name="search" />
+                        <button type="submit">
+                            <span><i class="fa fa-search"></i></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="single-blog-widget mb-50">
+                <h3>categories</h3>
+                <ul>
+                    @foreach (var category in Model.Categories)
+                    {
+                        <li><a href="#">@category.Name (@category.CourseCategories.Count)</a></li>
+                    }
+
+                </ul>
+            </div>
+            <div class="single-blog-widget mb-50">
+                <div class="single-blog-banner">
+                    <a asp-controller="course" asp-action="detail" id="blog"><img src="~/img/blog/blog-img.jpg" alt="blog"></a>
+                    <h2>best<br> eductaion<br> theme</h2>
+                </div>
+            </div>
+            <div class="single-blog-widget mb-50">
+                <h3>latest post</h3>
+                @foreach (var course in Model.Courses)
+                {
+                    <div class="single-post mb-30">
+                        <div class="single-post-img">
+                            <a asp-controller="course" asp-action="detail">
+                                <img style="width:95px;height:85px;" src="~/img/slider/@course.Image" alt="post">
+                                <div class="blog-hover">
+                                    <i class="fa fa-link"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="single-post-content">
+                            <h4><a href="blog-details.html">@course.Title</a></h4>
+
+                        </div>
+                    </div>
+                }
+
+            </div>
+            <div class="single-blog-widget">
+                <h3>tags</h3>
+                <div class="single-tag">
+                    @foreach (var Tag in Model.Tags)
+                    {
+                        <a asp-controller="" class="mr-10 mb-10">@Tag.Name</a>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else if (ViewData["Title"] == " Blog Detail")
+{
+    <div class="col-lg-4">
+        <div class="blog-sidebar right">
+            <div class="single-blog-widget mb-50">
+                <h3>search</h3>
+                <div class="blog-search">
+                    <form id="search" action="#">
+                        <input type="search" placeholder="Search..." name="search" />
+                        <button type="submit">
+                            <span><i class="fa fa-search"></i></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="single-blog-widget mb-50">
+                <h3>categories</h3>
+                <ul>
+                    @foreach (var category in Model.Categories)
+                    {
+                        <li><a href="#">@category.Name (@category.CourseCategories.Count)</a></li>
+                    }
+
+                </ul>
+            </div>
+            <div class="single-blog-widget mb-50">
+                <div class="single-blog-banner">
+                    <a asp-controller="blog" asp-action="detail" id="blog"><img src="~/img/blog/blog-img.jpg" alt="blog"></a>
+                    <h2>best<br> eductaion<br> theme</h2>
+                </div>
+            </div>
+            <div class="single-blog-widget mb-50">
+                <h3>latest post</h3>
+                @foreach (var blog in Model.Posts)
+                {
+                    <div class="single-post mb-30">
+                        <div class="single-post-img">
+                            <a asp-controller="blog" asp-action="detail">
+                                <img style="width:95px;height:85px;" src="~/img/slider/@blog.Image" alt="post">
+                                <div class="blog-hover">
+                                    <i class="fa fa-link"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="single-post-content">
+                            <h4><a href="blog-details.html">@blog.Title</a></h4>
+                            <p>By @blog.User.UserName  /  @blog.CreatedAt.ToString("dd MMMM ,yyyy")</p>
+                        </div>
+                    </div>
+                }
+
+            </div>
+            <div class="single-blog-widget">
+                <h3>tags</h3>
+                <div class="single-tag">
+                    @foreach (var Tag in Model.Tags)
+                    {
+                        <a asp-controller="" class="mr-10 mb-10">@Tag.Name</a>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else if (ViewData["Title"] =="event / details")
+{
 <div class="col-lg-4">
     <div class="blog-sidebar right">
         <div class="single-blog-widget mb-50">
@@ -17,33 +151,33 @@
             <ul>
                 @foreach (var category in Model.Categories)
                 {
-                    <li><a href="#">@category.Name (10)</a></li>
+                    <li><a href="#">@category.Name (@category.CourseCategories.Count)</a></li>
                 }
 
             </ul>
         </div>
         <div class="single-blog-widget mb-50">
             <div class="single-blog-banner">
-                <a href="blog-details.html" id="blog"><img src="~/img/blog/blog-img.jpg" alt="blog"></a>
+                <a asp-controller="event" asp-action="detail" id="blog"><img src="~/img/blog/blog-img.jpg" alt="blog"></a>
                 <h2>best<br> eductaion<br> theme</h2>
             </div>
         </div>
         <div class="single-blog-widget mb-50">
             <h3>latest post</h3>
-            @foreach (var blog in Model.Posts)
+            @foreach (var events in Model.Events)
             {
                 <div class="single-post mb-30">
                     <div class="single-post-img">
-                        <a href="blog-details.html">
-                            <img style="width:95px;height:85px;" src="~/img/slider/@blog.Image" alt="post">
+                        <a asp-controller="event" asp-action="detail">
+                            <img style="width:95px;height:85px;" src="~/img/slider/@events.Image" alt="post">
                             <div class="blog-hover">
                                 <i class="fa fa-link"></i>
                             </div>
                         </a>
                     </div>
                     <div class="single-post-content">
-                        <h4><a href="blog-details.html">@blog.Title</a></h4>
-                        <p>By @blog.User.FulName  /  </p>
+                        <h4><a href="blog-details.html">@events.Title</a></h4>
+                        <p>  /  @events.CreatedAt.ToString("dd MMMM ,yyyy")</p>
                     </div>
                 </div>
             }
@@ -61,3 +195,4 @@
         </div>
     </div>
 </div>
+}

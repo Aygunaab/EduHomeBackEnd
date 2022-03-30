@@ -1,6 +1,6 @@
 ﻿@model BlogDetailVm
 @{
-    ViewData["Title"] = "Detail";
+    ViewData["Title"] = " Blog Detail";
 }
 
 <!-- Blog Start -->
@@ -14,7 +14,7 @@
                     </div>
                     <div class="blog-details-content">
                         <h2>@Model.Posts.Title</h2>
-                        <h6>By @Model.Posts.User.UserName/   /  <i class="fa fa-comments-o"></i> @Model.Posts.BlogComments.Count</h6>
+                        <h6 style="text-transform:capitalize">By @Model.Posts.User.UserName/@Model.Posts.CreatedAt.ToString("MMMM dd ,yyyy")   /  <i class="fa fa-comments-o"></i> @Model.Posts.BlogComments.Count</h6>
                         <p>@Html.Raw(Model.Posts.Description)</p>
                     </div>
                     @foreach (var comment in Model.Posts.BlogComments)

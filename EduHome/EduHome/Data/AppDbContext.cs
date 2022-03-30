@@ -17,7 +17,7 @@ namespace EduHome.Data
         public DbSet<Course>Courses { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<CourseCategory> CourseCategories { get; set; }
-        public DbSet<Feature> Features { get; set; }
+       
         public DbSet<Position> Positions { get; set; }
         public DbSet<Speaker> Speakers { get; set; }
         public DbSet<Event> Events { get; set; }

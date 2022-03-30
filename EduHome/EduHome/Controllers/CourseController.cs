@@ -32,7 +32,7 @@ namespace EduHome.Controllers
        public IActionResult Detail(int Id,int CategoryId)
         {
 
-            Course course = _context.Courses.Include(c=>c.Feature)
+            Course course = _context.Courses
                  .Include(c => c.Comments)
                 .ThenInclude(c => c.User)
                 .Include(c => c.CourseCategories)
@@ -65,16 +65,14 @@ namespace EduHome.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-       public async Task<IActionResult>AddComment(int Id,CourseDetailVm model)
+        public async Task<IActionResult> AddComment(int Id, CourseDetailVm model)
         {
-            var course =await _context.Courses.Include(c => c.Feature)
-                .Include(c=>c.Comments)
-                .ThenInclude(c=>c.User)
-                 .Include(c => c.CourseCategories)
-                 .ThenInclude(cc => cc.Category)
-                 .FirstOrDefaultAsync(c => c.Id == Id);
+            var course = await _context.Courses
+                .Include(c => c.Comments)
+                .ThenInclude(cc=>cc.User)
+                .FirstOrDefaultAsync(c => c.Id == Id);
             if (course == null) return NotFound();
-           
+
 
             if (!ModelState.IsValid)
             {
@@ -86,7 +84,9 @@ namespace EduHome.Controllers
                 Subject = model.Comment.Subject,
                 Description = model.Comment.Description,
                 UserId = _userManager.GetUserId(User),
-                CourseId = Id
+                CourseId = Id,
+
+
             };
 
             await _context.Comments.AddAsync(comment);

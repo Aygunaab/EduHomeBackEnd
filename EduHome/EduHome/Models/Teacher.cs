@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -12,8 +13,6 @@ namespace EduHome.Models
         public int Id  { get; set; }
         [Required]
         public string Image { get; set; }
-       [Required]
-        public string DetailsImage { get; set; }
         [Required, MaxLength(30)]
         public string Fullname { get; set; }
         [Required,MaxLength(150)]
@@ -36,8 +35,12 @@ namespace EduHome.Models
         public SocialLink Social { get; set; }
         public List<Skill>Skills { get; set; }
        
-        public int PositionId { get; set; }
+        public int? PositionId { get; set; }
         public Position Position { get; set; }
+
+        [NotMapped]
+        [Required]
+        public IFormFile ImageFile { get; set; }
 
     }
 }

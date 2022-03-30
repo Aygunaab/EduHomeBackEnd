@@ -13,9 +13,7 @@ namespace EduHome.Models
         public string PinterestLink { get; set; }
         public string VimeoLink { get; set; }
         public string TwitterLink { get; set; }
-        [ForeignKey("Teacher")]
-        public int TeacherId { get; set; }
-        public Teacher Teacher { get; set; }
+       
 
     }
 }

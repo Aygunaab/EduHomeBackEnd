@@ -14,8 +14,7 @@ namespace EduHome.Models
         public string Name { get; set; }
         [Required]
         public double ProgressPersent { get; set; }
-        [ForeignKey("Teacher")]
-        public int TeacherId { get; set; }
+       
         public Teacher Teacher { get; set; }
     }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EduHome.ViewComponents
 {
-    public class CourseViewComponent:ViewComponent
+    public class CourseViewComponent : ViewComponent
     {
         private readonly AppDbContext _context;
 
@@ -18,20 +18,28 @@ namespace EduHome.ViewComponents
             _context = context;
         }
 
-        public async Task<IViewComponentResult >InvokeAsync()
+        public async Task<IViewComponentResult> InvokeAsync()
         {
 
             List<Course> coursecat;
-            if (ViewData["Title"] == "Home Page") {
+            if (ViewData["Title"] == "Home Page")
+            {
 
-                coursecat = await _context.Courses.Include(c => c.CourseCategories).ThenInclude(cc => cc.Category).Take(3).ToListAsync();
+                coursecat = await _context.Courses
+                    .Include(c => c.CourseCategories)
+                    .ThenInclude(cc => cc.Category)
+                    .Include(c => c.Comments)
+                    .ThenInclude(c => c.User)
+                    .Take(3).ToListAsync();
             }
             else
             {
-                coursecat = await _context.Courses.Include(c => c.CourseCategories).ThenInclude(cc => cc.Category).ToListAsync();
+                coursecat = await _context.Courses.Include(c => c.CourseCategories).ThenInclude(cc => cc.Category)
+                    .Include(c => c.Comments)
+                    .ThenInclude(c => c.User).ToListAsync();
             }
 
-               
+
             return View(coursecat);
         }
     }

@@ -1,4 +1,5 @@
 ﻿using EduHome.Data;
+using EduHome.Models;
 using EduHome.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -27,7 +28,12 @@ namespace EduHome.ViewComponents
                 .Include(p => p.BlogComments)
                 .ThenInclude(bc => bc.User).Take(3)
                 .ToListAsync(),
-                Tags=await _context.Tags.ToListAsync(),
+                Tags = await _context.Tags.ToListAsync(),
+                Courses = await _context.Courses.Include(c => c.CourseCategories)
+                .ThenInclude(cc => cc.Category)
+                .ToListAsync(),
+                Events=await _context.Events.Include(e=>e.EventSpeakers)
+                .ThenInclude(es=>es.Speaker).ToListAsync(),
                 
             };
             return View(model);

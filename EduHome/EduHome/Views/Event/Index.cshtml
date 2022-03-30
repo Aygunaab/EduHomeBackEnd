@@ -13,19 +13,19 @@
                     <div class="single-event mb-60">
                         <div class="event-img">
                             <a href="event-details.html">
-                                <img src="~/img/event/@item.mainImage" alt="event">
+                                <img src="~/img/slider/@item.Image" alt="event">
                                 <div class="course-hover">
                                     <i class="fa fa-link"></i>
                                 </div>
                             </a>
                             <div class="event-date">
-                                <h3>@item.Date.ToString("dd") <span>@item.Date.ToString("MMMM")</span></h3>
+                                <h3>@item.StartTime.ToString("dd") <span>@item.StartTime.ToString("MMMM")</span></h3>
                             </div>
                         </div>
                         <div class="event-content text-start">
                             <h4><a href="event-details.html">@item.Title</a></h4>
                             <ul>
-                                <li><span>time:</span> @item.Time.ToString("t") - @item.EndTime.ToString("t")</li>
+                                <li><span>time:</span> @item.StartTime.ToString("t")-@item.EndTime.ToString("t") </li>
                                 <li><span>venue</span> @item.Venue</li>
                             </ul>
                             <div class="event-content-right">

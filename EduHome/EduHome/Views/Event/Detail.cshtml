@@ -12,29 +12,29 @@
                 <div class="col-lg-8">
                     <div class="event-details">
                         <div class="event-details-img">
-                            <img     src="~/img/event/@Model.Events.Image" alt="event-details">
+                            <img  style="width:770px;height:358px;" src="~/img/slider/@Model.Events.Image" alt="event-details">
                             <div class="event-date">
-                                <h3>@Model.Events.Date.ToString("dd") <span>@Model.Events.Date.ToString("MMMM")</span></h3>
+                                <h3>@Model.Events.StartTime.ToString("dd") <span>@Model.Events.StartTime.ToString("MMMM")</span></h3>
                             </div>
                         </div>
                         <div class="event-details-content">
                             <h2>@Model.Events.Title</h2>
                             <ul>
-                                <li><span>time : </span>@Model.Events.Time.ToString("t") - @Model.Events.EndTime.ToString("t")</li>
+                                <li><span>time : </span>@Model.Events.StartTime.ToString("t")-@Model.Events.EndTime.ToString("t") </li>
                                 <li><span>venue : </span>@Model.Events.Venue</li>
                             </ul>
-                            <p>@Model.Events.Description</p>
+                            <p>@Html.Raw(Model.Events.Description)</p>
                             <div class="speakers-area fix">
                                 <h4>speakers</h4>
-                                @foreach (var item in Model.EventSpeakers)
+                                @foreach (var item in Model.Speakers)
                                 {
                                     <div class="single-speaker">
                                         <div class="speaker-img">
-                                            <img     src="~/img/event/@item.Speaker.ProfileImage" alt="speaker">
+                                            <img     src="~/img/event/@item.ProfileImage" alt="speaker">
                                         </div>
                                         <div class="speaker-name">
-                                            <h5>@item.Speaker.FullName</h5>
-                                            <p>@item.Speaker.Position.Name</p>
+                                            <h5>@item.FullName</h5>
+                                            <p>@item.Position.Name</p>
                                         </div>
                                     </div>
                                 }

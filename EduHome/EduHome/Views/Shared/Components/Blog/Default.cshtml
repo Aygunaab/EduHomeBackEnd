@@ -12,7 +12,7 @@
             </div>
             <div class="blog-content">
                 <div class="blog-top">
-                    <p>By   /  June 20, 2017  /  <i class="fa fa-comments-o"></i> @item.BlogComments.Count</p>
+                    <p style="text-transform:capitalize">By @item.User.UserName  /  @item.CreatedAt.ToString("MMMM dd ,yyyy") /  <i class="fa fa-comments-o"></i> @item.BlogComments.Count</p>
                 </div>
                 <div class="blog-bottom">
                     <h2><a href="blog-details.html">@item.Title </a></h2>

@@ -173,7 +173,7 @@
                                 <i class="mdi mdi-settings text-primary"></i>
                                 Settings
                             </a>
-                            <a class="dropdown-item">
+                            <a asp-controller="User" asp-action="logout" class="dropdown-item">
                                 <i class="mdi mdi-logout text-primary"></i>
                                 Logout
                             </a>
@@ -223,8 +223,47 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="~/Admin/#ui-basic1" aria-expanded="false" aria-controls="ui-basic1">
+                        <a class="nav-link" data-bs-toggle="collapse" href="~/Admin/#ui-basicev" aria-expanded="false" aria-controls="ui-basicev">
                             <i class="mdi mdi-circle-outline menu-icon"></i>
+                            <span class="menu-title">Event</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-basicev">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" asp-controller="event" asp-action="create">Create new event</a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-controller="event" asp-action="index"> Event list</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="~/Admin/#ui-basicco" aria-expanded="false" aria-controls="ui-basicco">
+                            <i class="mdi mdi-circle-outline menu-icon"></i>
+                            <span class="menu-title">Course</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-basicco">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" asp-controller="course" asp-action="create">Create new course</a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-controller="course" asp-action="index">Course  list</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="~/Admin/#ui-basict" aria-expanded="false" aria-controls="ui-basict">
+                            <i class="mdi mdi-circle-outline menu-icon"></i>
+                            <span class="menu-title">Teacher</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-basict">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" asp-controller="teacher" asp-action="create">Create new teacher</a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-controller="teacher" asp-action="index">Teacher list</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="~/Admin/#ui-basic1" aria-expanded="false" aria-controls="ui-basic1">
+                            <i class="mdi mdi-account menu-icon"></i>
                             <span class="menu-title">User</span>
                             <i class="menu-arrow"></i>
                         </a>

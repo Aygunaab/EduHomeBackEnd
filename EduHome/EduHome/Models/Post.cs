@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EduHome.Models
 {
-    public class Post
+    public class Post:BaseEntity
     {
         public int Id { get; set; }
         public string Image { get; set; }

@@ -13,18 +13,20 @@ using System.Threading.Tasks;
 namespace EduHome.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles ="Admin,Moderator")]
+    //[Authorize(Roles = "Admin,Moderator")]
     public class UserController : Controller
     {
         private readonly AppDbContext _context;
         private readonly UserManager<User> _usermanager;
         private readonly RoleManager<IdentityRole> _roleMangaer;
+        private readonly SignInManager<User> _signinManager;
 
-        public UserController(AppDbContext context, UserManager<User> usermanager, RoleManager<IdentityRole> roleMangaer)
+        public UserController(AppDbContext context, UserManager<User> usermanager, RoleManager<IdentityRole> roleMangaer, SignInManager<User> signinManager)
         {
             _context = context;
             _usermanager = usermanager;
             _roleMangaer = roleMangaer;
+            _signinManager = signinManager;
         }
        
         public async Task< IActionResult> Index()
@@ -145,6 +147,11 @@ namespace EduHome.Areas.Admin.Controllers
             await _context.SaveChangesAsync();
 
             return RedirectToAction("Index");
+        }
+        public async Task<IActionResult> Logout()
+        {
+            await _signinManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
         }
 
     }
