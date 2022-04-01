@@ -27,36 +27,28 @@ namespace EduHome.Controllers
 
             return View(eventspeak);
         }
-        public IActionResult Detail(int Id, int SpeakerId)
+        public IActionResult Detail(int id, int speakerId)
         {
+            Event events = _context.Events.Include(e => e.EventSpeakers)
+                .ThenInclude(e=>e.Speaker).ThenInclude(s=>s.Position)
+                .FirstOrDefault(e => e.Id == id);
 
-            Event even = _context.Events
-                 .Include(e => e.EventSpeakers)
-                 .ThenInclude(es => es.Speaker)
-                 .FirstOrDefault(e => e.Id == Id);
-
-
-            if (even == null) return NotFound();
-
-
+            if (events == null) return NotFound();
             ViewBag.Related = _context.Events.Where(e => e.EventSpeakers
-                .FirstOrDefault(es => es.SpeakerId == SpeakerId).
-                SpeakerId == SpeakerId && e.Id != even.Id)
+                .FirstOrDefault(es => es.SpeakerId == speakerId).
+                SpeakerId == speakerId && e.Id != events.Id)
                 .Include(e => e.EventSpeakers)
                  .ThenInclude(es => es.Speaker).ToList();
 
-            EventVm model = new EventVm
+
+           EventDetailVm model = new EventDetailVm
             {
-
-
-                Events = even,
-                Speakers = _context.Speakers.Include(s => s.Position).ToList(),
-                EventSpeakers = _context.EventSpeakers.ToList()
-
+               Event=events
             };
 
             return View(model);
-
         }
+
+       
     }
 }

@@ -14,14 +14,14 @@
             </div>
             <div class="col-md-7">
                 <div class="teacher-details-content ml-50">
-                    <h2>@Model.Fullname</h2>
-                    <h5>@Model.Position.Name</h5>
-                    <h4>@Model.Title</h4>
+                    <h2>@Model.Name</h2>
+                    <h5>@Model.Profession</h5>
+                    <h4>About Me</h4>
                     <p>@Html.Raw(Model.Description)</p>
                     <ul>
                         <li><span>degree: </span>@Model.Degree</li>
-                        <li><span>experience: </span>@Model.Experiance</li>
-                        <li><span>hobbies: </span>@Model.Hobbies</li>
+                        <li><span>experience: </span>@Model.Experience</li>
+                        <li><span>hobbies: </span>@Model.Experience</li>
                         <li><span>faculty: </span>@Model.Faculty</li>
                     </ul>
                 </div>
@@ -31,14 +31,15 @@
             <div class="col-lg-3 col-md-4">
                 <div class="teacher-contact">
                     <h4>contact information</h4>
-                    <p><span>mail me : </span>@Model.Email</p>
-                    <p><span>make a call : </span>@Model.Number]</p>
+                    <p><span>mail me : </span>@Model.Mail</p>
+                    <p><span>make a call : </span>@Model.Phone</p>
                     <p><span>skype : </span> @Model.Skype</p>
                     <ul>
-                        <li><a href="@Model.Social.FacebookLink"><i class="zmdi zmdi-facebook"></i></a></li>
-                        <li><a href="@Model.Social.PinterestLink"><i class="zmdi zmdi-pinterest"></i></a></li>
-                        <li><a href="@Model.Social.VimeoLink"><i class="zmdi zmdi-vimeo"></i></a></li>
-                        <li><a href="@Model.Social.TwitterLink"><i class="zmdi zmdi-twitter"></i></a></li>
+                        @foreach (var social in Model.SocialToTeachers)
+                        {
+                            <li><a href="@social.Link">@Html.Raw(social.Social.Icon)</a></li>
+                            
+                        }
                     </ul>
                 </div>
             </div>
@@ -48,14 +49,14 @@
                 </div>
                 <div class="skill-wrapper">
                     <div class="row">
-                        @foreach (var item in Model.Skills)
+                        @foreach (var skills in Model.SkillsToTeachers)
                         {
                             <div class="col-md-4">
                                 <div class="skill-bar-item">
-                                    <span>@item.Name</span>
+                                    <span>@skills.Skills.Name</span>
                                     <div class="progress">
                                         <div data-wow-delay="1.2s" data-wow-duration="1.5s" style="width: 85%; visibility: visible; animation-duration: 1.5s; animation-delay: 1.2s; animation-name: fadeInLeft;" data-progress="50%" class="progress-bar wow fadeInLeft">
-                                            <span class="text-top">@item.ProgressPersent %</span>
+                                            <span class="text-top">@skills.Progress %</span>
                                         </div>
                                     </div>
                                 </div>

@@ -1,0 +1,56 @@
+﻿
+
+@model SocialTeacherVm
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Create new Category</h4>
+                        <form class="forms-sample" method="post" asp-controller="TeacherSocial" asp-action="Create">
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Choje Social </label>
+                                <select class="form-control" asp-for="SocialId">
+                                    @foreach (var social in Model.Socials)
+                                    {
+                                        <option value="@social.Id">@social.Link</option>
+                                    }
+                                </select>
+
+                                <span asp-validation-for="SocialId" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Choje Teacher </label>
+                                <select class="form-control" asp-for="TeacherId">
+                                    @foreach (var social in Model.Teachers)
+                                    {
+                                        <option value="@social.Id">@social.Name</option>
+                                    }
+                                </select>
+
+                                <span asp-validation-for="TeacherId" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="exampleInputUsername1">Social link</label>
+                                <input asp-for="Link" class="form-control" placeholder="Social Link">
+                                <span asp-validation-for="Link" class="text-danger"></span>
+                            </div>
+
+
+                            <button type="submit" class="btn btn-primary me-2">Submit</button>
+                            <button class="btn btn-light">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

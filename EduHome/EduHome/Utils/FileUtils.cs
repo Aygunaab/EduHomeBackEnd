@@ -27,5 +27,6 @@ namespace EduHome.Utils
                 File.Delete(fullPath);
             }
         }
+       
     }
 }

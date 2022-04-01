@@ -7,6 +7,12 @@
   <ItemGroup>
     <Compile Remove="Migrations\20220330185001_SkilTable.cs" />
     <Compile Remove="Migrations\20220330185001_SkilTable.Designer.cs" />
+    <Compile Remove="Migrations\20220331045107_CreateNoticeTable.cs" />
+    <Compile Remove="Migrations\20220331045107_CreateNoticeTable.Designer.cs" />
+    <Compile Remove="Migrations\20220331064812_UpdateTeacherTable.cs" />
+    <Compile Remove="Migrations\20220331064812_UpdateTeacherTable.Designer.cs" />
+    <Compile Remove="Migrations\20220331072821_changeTeacherTable.cs" />
+    <Compile Remove="Migrations\20220331072821_changeTeacherTable.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

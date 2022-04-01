@@ -25,12 +25,14 @@ namespace EduHome.Data
         public DbSet<Comment> Comments { get; set; }
         public DbSet<TestimonialSlider> TestimonialSliders { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
-        public DbSet<SocialLink>SocialLinks { get; set; }
         public DbSet<Skill>Skills { get; set; }
         public DbSet<Post> Posts{ get; set; }
         public DbSet<BlogComment> BlogComments{ get; set; }
         public DbSet<Tag> Tags { get; set; }
-
+        public DbSet<Notice> Notices { get; set; }
+        public DbSet<Social> Socials { get; set; }
+        public DbSet<SocialToTeacher> SocialToTeachers { get; set; }
+        public DbSet<SkillsToTeacher> SkillsToTeachers { get; set; }
 
     }
 }

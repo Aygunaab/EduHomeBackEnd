@@ -9,12 +9,12 @@ namespace EduHome.Models
 {
     public class Skill
     {
+        
         public int Id { get; set; }
-        [Required]
+
+        [MaxLength(50)]
         public string Name { get; set; }
-        [Required]
-        public double ProgressPersent { get; set; }
-       
-        public Teacher Teacher { get; set; }
+
+        public List<SkillsToTeacher> SkillsToTeachers { get; set; }
     }
 }

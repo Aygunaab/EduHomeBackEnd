@@ -22,7 +22,11 @@ namespace EduHome.Controllers
         {
             AboutVm model = new AboutVm
             {
-                Teachers = _context.Teachers.Include(t => t.Social).Include(t => t.Position).Take(4).ToList()
+                Teachers = _context.Teachers.Include(t => t.SocialToTeachers)
+                .ThenInclude(st=>st.Social)
+                .Include(t=>t.SkillsToTeachers)
+                .ThenInclude(st=>st.Skills)
+                .Take(4).ToList()
             };
             return View(model);
         }

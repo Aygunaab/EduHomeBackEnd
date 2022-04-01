@@ -1,5 +1,5 @@
 ﻿
-@model TeacherVm
+@model TeacherViewModel
 @{
     ViewData["Title"] = "Create";
 }
@@ -16,9 +16,19 @@
                         </p>
                         <form class="forms-sample" method="post" asp-controller="teacher" asp-action="create" enctype="multipart/form-data">
                             <div class="form-group">
-                                <label for="exampleInputUsername1">Fullname</label>
-                                <input asp-for="Fullname" class="form-control" id="exampleInputUsername1" placeholder="FullName">
-                                <span asp-validation-for="Fullname" class="text-danger"></span>
+                                <label for="exampleInputUsername1">Name</label>
+                                <input asp-for="Name" class="form-control" id="exampleInputUsername1" placeholder="Name">
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Surname</label>
+                                <input asp-for="Surname" class="form-control" id="exampleInputUsername1" placeholder="Surname">
+                                <span asp-validation-for="Surname" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Profession</label>
+                                <input asp-for="Profession" class="form-control" id="exampleInputUsername1" placeholder="Profession">
+                                <span asp-validation-for="Profession" class="text-danger"></span>
                             </div>
                             <div class="form-group">
                                 <label for="Description">Description</label>
@@ -32,19 +42,14 @@
                                 <span asp-validation-for="ImageFile" class="text-danger"></span>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputUsername1">Title</label>
-                                <input asp-for="Title" class="form-control" id="exampleInputUsername1" placeholder="Title">
-                                <span asp-validation-for="Title" class="text-danger"></span>
-                            </div>
-                            <div class="form-group">
                                 <label for="exampleInputUsername1">Degree</label>
                                 <input asp-for="Degree" class="form-control" id="exampleInputUsername1" placeholder="Degree">
                                 <span asp-validation-for="Degree" class="text-danger"></span>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputUsername1">Experiance</label>
-                                <input asp-for="Experiance" class="form-control" id="exampleInputUsername1" placeholder="Experiance">
-                                <span asp-validation-for="Experiance" class="text-danger"></span>
+                                <input asp-for="Experience" class="form-control" id="exampleInputUsername1" placeholder="Experiance">
+                                <span asp-validation-for="Experience" class="text-danger"></span>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputUsername1">Hobbies</label>
@@ -58,52 +63,42 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputUsername1">Email</label>
-                                <input asp-for="Email" class="form-control" id="exampleInputUsername1" placeholder="Email">
-                                <span asp-validation-for="Email" class="text-danger"></span>
+                                <input asp-for="Mail" class="form-control" id="exampleInputUsername1" placeholder="Email">
+                                <span asp-validation-for="Mail" class="text-danger"></span>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputUsername1">Number</label>
-                                <input asp-for="Number" class="form-control" id="exampleInputUsername1" placeholder="Number">
-                                <span asp-validation-for="Number" class="text-danger"></span>
+                                <input asp-for="Phone" class="form-control" id="exampleInputUsername1" placeholder="Number">
+                                <span asp-validation-for="Phone" class="text-danger"></span>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputUsername1">Skype</label>
                                 <input asp-for="Skype" class="form-control" id="exampleInputUsername1" placeholder="Skype">
                                 <span asp-validation-for="Skype" class="text-danger"></span>
                             </div>
-                            <div class="form-group">
+                            @*<div class="form-group">
                                 <label for="exampleInputUsername1">Social</label>
-                                <select class="form-control" asp-for="SocialId">
+                                <select class="form-control" asp-for="SocialIds">
                                     @foreach (var social in Model.Socials)
                                     {
-                                        <option value="@social.Id">@social.FacebookLink</option>
+                                        <option value="@social.Id">@social.Soci</option>
                                     }
                                 </select>
 
-                                <span asp-validation-for="SocialId" class="text-danger"></span>
-                            </div>
-                            <div class="form-group">
+                                <span asp-validation-for="SocialIds" class="text-danger"></span>
+                            </div>*@
+                            @*<div class="form-group">
                                 <label for="exampleInputUsername1">Skill</label>
-                                <select class="form-control" asp-for="SkillId">
-                                    @foreach (var skill in Model.Skills)
+                                <select class="form-control" asp-for="SkillIds">
+                                    @foreach (var skil in Model.Skills)
                                     {
-                                        <option value="@skill.Id">@skill.Name</option>
+                                        <option value="@skil.Id">@skil.Name</option>
                                     }
                                 </select>
 
-                                <span asp-validation-for="SkillId" class="text-danger"></span>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputUsername1">Position</label>
-                                <select class="form-control" asp-for="PositionId">
-                                    @foreach (var position in Model.Positions)
-                                    {
-                                        <option value="@position.Id">@position.Name</option>
-                                    }
-                                </select>
+                                <span asp-validation-for="SkillIds" class="text-danger"></span>
+                            </div>*@
 
-                                <span asp-validation-for="PositionId" class="text-danger"></span>
-                            </div>
 
                             <button type="submit" class="btn btn-primary me-2">Submit</button>
                             <button class="btn btn-light">Cancel</button>

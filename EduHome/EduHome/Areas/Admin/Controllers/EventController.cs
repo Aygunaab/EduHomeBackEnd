@@ -13,10 +13,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace EduHome.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    //[Authorize(Roles = "Admin,Moderator")]
+    [Authorize(Roles = "Admin")]
     public class EventController : Controller
     {
         private readonly AppDbContext _context;
@@ -73,7 +74,7 @@ namespace EduHome.Areas.Admin.Controllers
             }
 
             //main image
-             if (!model.MainImage.ContentType.Contains("image"))
+             if (!model.EventPicture.ContentType.Contains("image"))
             {
                 ModelState.AddModelError(nameof(Post.ImageFile), "File type is unsupported, please select image");
                 return View();
@@ -86,7 +87,7 @@ namespace EduHome.Areas.Admin.Controllers
                 Title=model.Title,
                 Description=model.Description,
                Venue=model.Venue,                           
-             Image = FileUtils.Create(FileConstants.ImagePath, model.MainImage),              
+             Image = FileUtils.Create(FileConstants.ImagePath, model.EventPicture),              
                EventSpeakers= speakers,
               CreatedAt=model.CreatedAt,
               StartTime=model.StartTime,
@@ -122,6 +123,9 @@ namespace EduHome.Areas.Admin.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+
+ 
 
 
 

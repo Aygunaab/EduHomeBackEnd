@@ -33,7 +33,8 @@ namespace EduHome.ViewComponents
                 .ThenInclude(cc => cc.Category)
                 .ToListAsync(),
                 Events=await _context.Events.Include(e=>e.EventSpeakers)
-                .ThenInclude(es=>es.Speaker).ToListAsync(),
+                .ThenInclude(es=>es.Speaker).Take(3).ToListAsync(),
+                CourseCategories=await _context.CourseCategories.Include(c=>c.Category).Include(c=>c.Course).ToListAsync(),
                 
             };
             return View(model);

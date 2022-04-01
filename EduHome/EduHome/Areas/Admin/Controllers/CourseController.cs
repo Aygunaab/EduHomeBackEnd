@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 namespace EduHome.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    //[Authorize(Roles = "Admin,Moderator")]
+    [Authorize(Roles = "Admin")]
     public class CourseController : Controller
     {
         private readonly AppDbContext _context;
@@ -64,7 +64,6 @@ namespace EduHome.Areas.Admin.Controllers
             return View(model);
         }
 
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(CoursePostViewModel model)
@@ -73,10 +72,6 @@ namespace EduHome.Areas.Admin.Controllers
             model.Categories = await _context.Categories.ToListAsync();
 
             if (!ModelState.IsValid) return View(model);
-
-
-
-          
 
             //categories
             List<CourseCategory> categories = new List<CourseCategory>();

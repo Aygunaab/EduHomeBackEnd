@@ -42,58 +42,27 @@
             <div class="col-md-6">
                 <div class="notice-left">
                     <h3>notice board</h3>
-                    <div class="single-notice-left mb-25 pb-25">
-                        <h4>5, June 2021</h4>
-                        <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                    </div>
-                    <div class="single-notice-left mb-25 pb-25">
-                        <h4>4, June 2021</h4>
-                        <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                    </div>
-                    <div class="single-notice-left pb-75">
-                        <h4>3, June 2021</h4>
-                        <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                    </div>
-                    <div class="single-notice-left mb-25 pb-25">
-                        <h4>5, June 2021</h4>
-                        <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                    </div>
-                    <div class="single-notice-left mb-25 pb-25">
-                        <h4>4, June 2021</h4>
-                        <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                    </div>
-                    <div class="single-notice-left pb-70">
-                        <h4>3, June 2021</h4>
-                        <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                    </div>
-                    <div class="single-notice-left mb-25 pb-25">
-                        <h4>5, June 2021</h4>
-                        <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                    </div>
-                    <div class="single-notice-left mb-25 pb-25">
-                        <h4>4, June 2021</h4>
-                        <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                    </div>
-                    <div class="single-notice-left pb-70">
-                        <h4>3, June 2021</h4>
-                        <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                    </div>
+                    @foreach (var item in Model.Notices)
+                    {
+                        <div style="margin-bottom:30px; padding-bottom:30px;" class="single-notice-left ">
+                            <h4>@item.Time.ToString("d MMMM ,yyyy")</h4>
+                            <p>@Html.Raw(item.Description) </p>
+                        </div>
+                    }
+
+
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="notice-right">
-                    <div class="single-notice-right mb-25 pb-25">
-                        <h3>PROFESSIONAL TEACHER</h3>
-                        <p>I must explain to you how all this mistaken idea of denouncing pleure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings </p>
-                    </div>
-                    <div class="single-notice-right mb-25 pb-25">
-                        <h3>Online courses</h3>
-                        <p>I must explain to you how all this mistaken idea of denouncing pleure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings </p>
-                    </div>
-                    <div class="single-notice-right">
-                        <h3>easy to addmission</h3>
-                        <p>I must explain to you how all this mistaken idea of denouncing pleure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings </p>
-                    </div>
+                    @foreach (var notice in Model.Notices.Take(3))
+                    {
+                        <div class="single-notice-right mb-25 pb-25">
+                            <h3>@notice.Title</h3>
+                            <p>@Html.Raw(notice.Description) </p>
+                        </div>
+                    }
+
                 </div>
             </div>
         </div>
@@ -146,144 +115,50 @@
         </div>
         <div class="row">
             <div class="col-lg-6">
-                <div class="single-event mb-35">
-                    <div class="event-date">
-                        <h3><a href="~/event-details.html">20 <span>June</span></a></h3>
-                    </div>
-                    <div class="event-content text-start">
-                        <div class="event-content-left">
-                            <h4><a href="~/event-details.html">MICRO BIOLOGICAL WORKSHOP</a></h4>
-                            <ul>
-                                <li><i class="fa fa-clock-o"></i>9.00 AM - 4.45 PM</li>
-                                <li><i class="fa fa-map-marker"></i>New Yourk City</li>
-                            </ul>
+                @foreach (var item in Model.Events)
+                {
+                    <div class="single-event mb-35">
+                        <div class="event-date">
+                            <h3><a asp-controller="event" asp-action="detail">@item.StartTime.ToString("dd") <span>@item.StartTime.ToString("MMMM")</span></a></h3>
                         </div>
-                        <div class="event-content-right">
-                            <a class="default-btn" href="~/event-details.html">join now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="single-event mb-35">
-                    <div class="event-date">
-                        <h3><a href="~/event-details.html">18 <span>June</span></a></h3>
-                    </div>
-                    <div class="event-content text-start">
-                        <div class="event-content-left">
-                            <h4><a href="~/event-details.html">ADVANCE PHP WORKSHOP</a></h4>
-                            <ul>
-                                <li><i class="fa fa-clock-o"></i>9.00 AM - 4.45 PM</li>
-                                <li><i class="fa fa-map-marker"></i>New Yourk City</li>
-                            </ul>
-                        </div>
-                        <div class="event-content-right">
-                            <a class="default-btn" href="~/event-details.html">join now</a>
+                        <div class="event-content text-start">
+                            <div class="event-content-left">
+                                <h4><a asp-controller="event" asp-action="detail">@item.Title</a></h4>
+                                <ul>
+                                    <li><i class="fa fa-clock-o"></i>@item.StartTime.ToString("t") -@item.EndTime.ToString("t") </li>
+                                    <li><i class="fa fa-map-marker"></i>@item.Venue</li>
+                                </ul>
+                            </div>
+                            <div class="event-content-right">
+                                <a class="default-btn" asp-controller="event" asp-action="detail">join now</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="single-event mb-35">
-                    <div class="event-date">
-                        <h3><a href="~/event-details.html">16 <span>June</span></a></h3>
-                    </div>
-                    <div class="event-content text-start">
-                        <div class="event-content-left">
-                            <h4><a href="~/event-details.html">LEARN ENGLISH HISTORY</a></h4>
-                            <ul>
-                                <li><i class="fa fa-clock-o"></i>9.00 AM - 4.45 PM</li>
-                                <li><i class="fa fa-map-marker"></i>New Yourk City</li>
-                            </ul>
-                        </div>
-                        <div class="event-content-right">
-                            <a class="default-btn" href="~/event-details.html">join now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="single-event">
-                    <div class="event-date">
-                        <h3><a href="~/event-details.html">14 <span>June</span></a></h3>
-                    </div>
-                    <div class="event-content text-start">
-                        <div class="event-content-left">
-                            <h4><a href="~/event-details.html">GLOBAL ECONOMIC CONFERENCE</a></h4>
-                            <ul>
-                                <li><i class="fa fa-clock-o"></i>9.00 AM - 4.45 PM</li>
-                                <li><i class="fa fa-map-marker"></i>New Yourk City</li>
-                            </ul>
-                        </div>
-                        <div class="event-content-right">
-                            <a class="default-btn" href="~/event-details.html">join now</a>
-                        </div>
-                    </div>
-                </div>
+                }
+
             </div>
             <div class="col-lg-6 pt-5 pt-lg-0">
-                <div class="single-event mb-35">
-                    <div class="event-date">
-                        <h3><a href="~/event-details.html">12 <span>June</span></a></h3>
-                    </div>
-                    <div class="event-content text-start">
-                        <div class="event-content-left">
-                            <h4><a href="~/event-details.html">MATHEMATICAL WORKSHOP</a></h4>
-                            <ul>
-                                <li><i class="fa fa-clock-o"></i>9.00 AM - 4.45 PM</li>
-                                <li><i class="fa fa-map-marker"></i>New Yourk City</li>
-                            </ul>
+                @foreach (var item in Model.Events)
+                {
+                    <div class="single-event mb-35">
+                        <div class="event-date">
+                            <h3><a asp-controller="event" asp-action="detail">@item.StartTime.ToString("dd") <span>@item.StartTime.ToString("MMMM")</span></a></h3>
                         </div>
-                        <div class="event-content-right">
-                            <a class="default-btn" href="~/event-details.html">join now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="single-event mb-35">
-                    <div class="event-date">
-                        <h3><a href="~/event-details.html">10 <span>June</span></a></h3>
-                    </div>
-                    <div class="event-content text-start">
-                        <div class="event-content-left">
-                            <h4><a href="~/event-details.html">WORDPRESS AUTHOR MEET UP</a></h4>
-                            <ul>
-                                <li><i class="fa fa-clock-o"></i>9.00 AM - 4.45 PM</li>
-                                <li><i class="fa fa-map-marker"></i>New Yourk City</li>
-                            </ul>
-                        </div>
-                        <div class="event-content-right">
-                            <a class="default-btn" href="~/event-details.html">join now</a>
+                        <div class="event-content text-start">
+                            <div class="event-content-left">
+                                <h4><a asp-controller="event" asp-action="detail">@item.Title</a></h4>
+                                <ul>
+                                    <li><i class="fa fa-clock-o"></i>@item.StartTime.ToString("t") -@item.EndTime.ToString("t") </li>
+                                    <li><i class="fa fa-map-marker"></i>@item.Venue</li>
+                                </ul>
+                            </div>
+                            <div class="event-content-right">
+                                <a class="default-btn" asp-controller="event" asp-action="detail">join now</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="single-event mb-35">
-                    <div class="event-date">
-                        <h3><a href="~/event-details.html">08 <span>June</span></a></h3>
-                    </div>
-                    <div class="event-content text-start">
-                        <div class="event-content-left">
-                            <h4><a href="~/event-details.html">DIGITAL MARKETING ANALYSIS</a></h4>
-                            <ul>
-                                <li><i class="fa fa-clock-o"></i>9.00 AM - 4.45 PM</li>
-                                <li><i class="fa fa-map-marker"></i>New Yourk City</li>
-                            </ul>
-                        </div>
-                        <div class="event-content-right">
-                            <a class="default-btn" href="~/event-details.html">join now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="single-event">
-                    <div class="event-date">
-                        <h3><a href="~/event-details.html">06 <span>June</span></a></h3>
-                    </div>
-                    <div class="event-content text-start">
-                        <div class="event-content-left">
-                            <h4><a href="~/event-details.html">WROKSHOP ON UI &amp; UX</a></h4>
-                            <ul>
-                                <li><i class="fa fa-clock-o"></i>9.00 AM - 4.45 PM</li>
-                                <li><i class="fa fa-map-marker"></i>New Yourk City</li>
-                            </ul>
-                        </div>
-                        <div class="event-content-right">
-                            <a class="default-btn" href="~/event-details.html">join now</a>
-                        </div>
-                    </div>
-                </div>
+                }
+
             </div>
         </div>
     </div>

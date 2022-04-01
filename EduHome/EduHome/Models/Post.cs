@@ -21,7 +21,7 @@ namespace EduHome.Models
         public User User { get; set; }
         public List<BlogComment> BlogComments { get; set; }
         [NotMapped]
-        [Required]
+     
         public IFormFile ImageFile { get; set; }
      
 

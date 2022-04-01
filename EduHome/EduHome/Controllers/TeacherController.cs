@@ -1,5 +1,6 @@
 ﻿using EduHome.Data;
 using EduHome.Models;
+using EduHome.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -18,27 +19,36 @@ namespace EduHome.Controllers
             _context = context;
         }
 
-        public async Task< IActionResult> Index()
+        public async Task<IActionResult> Index()
         {
-            List<Teacher> teachers = await _context.Teachers.Include(t => t.Social).Include(t => t.Position).ToListAsync();
-            return View(teachers);
-        }
+            TeacherVm model = new TeacherVm
+            {
+                Teachers = await _context.Teachers.Include(t => t.SkillsToTeachers)
+                .ThenInclude(st => st.Skills)
+                .Include(t => t.SocialToTeachers)
+                .ThenInclude(st => st.Social)
+                .ToListAsync()
+
+            };
+         return View(model);
+    }
         public IActionResult Detail(int Id)
         {
 
-            Teacher teacher = _context.Teachers
-                 .Include(t => t.Social)
-                .Include(t=>t.Position)
-                 .Include(t => t.Skills)
+
+            Teacher teacher = _context.Teachers.Include(t => t.SkillsToTeachers)
+                .ThenInclude(st => st.Skills)
+                .Include(t => t.SocialToTeachers)
+                .ThenInclude(st => st.Social)
                  .FirstOrDefault(e => e.Id == Id);
 
 
             if (teacher == null) return NotFound();
 
 
-           
 
-           
+
+
 
             return View(teacher);
 

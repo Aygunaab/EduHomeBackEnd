@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace EduHome.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    //[Authorize(Roles = "Admin,Moderator")]
+    [Authorize(Roles = "Admin")]
     public class UserController : Controller
     {
         private readonly AppDbContext _context;

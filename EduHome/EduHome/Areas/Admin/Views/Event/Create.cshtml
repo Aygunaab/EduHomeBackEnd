@@ -22,8 +22,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputUsername1">MainImage</label>
-                                <input asp-for="MainImage" accept="image/*" class="form-control" placeholder="MainImage">
-                                <span asp-validation-for="MainImage" class="text-danger"></span>
+                                <input asp-for="EventPicture" accept="image/*" class="form-control" placeholder="MainImage">
+                                <span asp-validation-for="EventPicture" class="text-danger"></span>
                             </div>
 
 
@@ -46,9 +46,9 @@
                             <div class="form-group">
                                 <label for="exampleInputUsername1">Categories</label>
                                 <select class="form-control" asp-for="SpeakerIds">
-                                    @foreach (var speaker in Model.Speakers)
+                                    @foreach (var speaker in Model.EventSpeakers)
                                     {
-                                        <option value="@speaker.Id">@speaker.Id @speaker.FullName</option>
+                                        <option value="@speaker.Speaker.Id"> @speaker.Speaker.FullName</option>
                                     }
                                 </select>
 

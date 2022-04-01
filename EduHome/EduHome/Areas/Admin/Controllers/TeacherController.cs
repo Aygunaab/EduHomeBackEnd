@@ -3,6 +3,7 @@ using EduHome.Constants;
 using EduHome.Data;
 using EduHome.Models;
 using EduHome.Utils;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,6 +16,7 @@ using System.Threading.Tasks;
 namespace EduHome.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class TeacherController : Controller
     {
         private readonly AppDbContext _context;
@@ -30,21 +32,37 @@ namespace EduHome.Areas.Admin.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var teacher = await _context.Teachers.Include(t => t.Position)
-                .Include(t => t.Skills).Include(t => t.Social).ToListAsync();    
-            
+            var teacher = await _context.Teachers
+                 .Include(t=>t.SkillsToTeachers)
+                .ThenInclude(st=>st.Skills)
+                .Include(t=>t.SocialToTeachers)
+                 .ThenInclude(sT=>sT.Social)
+                 .ToListAsync();
             return View(teacher);
         }
+
+        public async Task<IActionResult> Detail(int id)
+        {
+            var teacher = await _context.Teachers
+                .Include(t => t.SkillsToTeachers)
+               .ThenInclude(st => st.Skills)
+               .Include(t => t.SocialToTeachers)
+                .ThenInclude(sT => sT.Social)
+                .FirstOrDefaultAsync(f => f.Id == id);
+
+            if (teacher== null) return NotFound();
+
+            return View(teacher);
+        }
+
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            TeacherVm model = new TeacherVm
+            TeacherViewModel model = new TeacherViewModel
             {
-                Socials = await _context.SocialLinks.ToListAsync(),
-                Skills = await _context.Skills.ToListAsync(),
-                Positions=await _context.Positions.ToListAsync(),
 
-               
+              Socials= await _context.Socials.ToListAsync(),
+               Skills= await _context.Skills.ToListAsync()
             };
 
             return View(model);
@@ -53,39 +71,47 @@ namespace EduHome.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(TeacherVm model)
+        public async Task<IActionResult> Create(TeacherViewModel model)
         {
-
-            model.Socials = await _context.SocialLinks.ToListAsync();
+            model.Socials = await _context.Socials.ToListAsync();
             model.Skills = await _context.Skills.ToListAsync();
-            model.Positions = await _context.Positions.ToListAsync();
+          
 
             if (!ModelState.IsValid) return View(model);
 
 
-            var position = await _context.Positions.FindAsync(model.PositionId);
-            if (position == null)
-            {
-                ModelState.AddModelError(nameof(TeacherVm.PositionId), "Choose a valid position");
-                return View(model);
-            }
-            var sociallink = await _context.SocialLinks.FindAsync(model.SocialId);
-            if (sociallink == null)
-            {
-                ModelState.AddModelError(nameof(TeacherVm.SocialId), "Choose a valid position");
-                return View(model);
-            }
-            var skills = await _context.Skills.FindAsync(model.SkillId);
-            if (skills == null)
-            {
-                ModelState.AddModelError(nameof(TeacherVm.SkillId), "Choose a valid position");
-                return View(model);
-            }
+
+
+
+            ////Socials
+            //List<SocialToTeacher> socials = new List<SocialToTeacher>();
+            //foreach (var socialId in model.SocialIds)
+            //{
+            //    var social = await _context.Socials.FindAsync(socialId);
+            //    if (social == null)
+            //    {
+            //        ModelState.AddModelError(nameof(TeacherViewModel.SocialIds), "Choose a valid social");
+            //        return View(model);
+            //    }
+            //    socials.Add(new SocialToTeacher { SocialId = socialId });
+            //}
+            ////skill
+            //List<SkillsToTeacher> skils = new List<SkillsToTeacher>();
+            //foreach (var skilId in model.SkillIds)
+            //{
+            //    var skill = await _context.Skills.FindAsync(skilId);
+            //    if (skill == null)
+            //    {
+            //        ModelState.AddModelError(nameof(TeacherViewModel.SkillIds), "Choose a valid skill");
+            //        return View(model);
+            //    }
+            //    skils.Add(new SkillsToTeacher { SkillsId = skilId});
+            //}
 
             //main image
             if (!model.ImageFile.ContentType.Contains("image"))
             {
-                ModelState.AddModelError(nameof(TeacherVm.ImageFile), "There is a problem in your file");
+                ModelState.AddModelError(nameof(CoursePostViewModel.ImageFile), "There is a problem in your file");
                 return View(model);
             }
 
@@ -93,23 +119,21 @@ namespace EduHome.Areas.Admin.Controllers
 
             Teacher teacher = new Teacher
             {
-                Title = model.Title,
-                Description = model.Description,
-                Fullname=model.Fullname,
+                Name=model.Name,
+                Surname=model.Surname,
+                Profession=model.Profession,
+                Description=model.Description,
                 Degree=model.Degree,
-                Experiance=model.Experiance,
+                Experience=model.Experience,
                 Hobbies=model.Hobbies,
                 Faculty=model.Faculty,
-                Email=model.Email,
+                Mail=model.Mail,
+                Phone=model.Phone,
                 Skype=model.Skype,
-                Number=model.Number,
-                Position=position,
-                Social=sociallink,  
-                Skills=model.Skills,
-
                 Image = FileUtils.Create(FileConstants.ImagePath, model.ImageFile),
-
-                
+                //SkillsToTeachers=skils,
+                //SocialToTeachers=socials,
+              
             };
 
             await _context.Teachers.AddAsync(teacher);
@@ -120,6 +144,9 @@ namespace EduHome.Areas.Admin.Controllers
 
 
         }
+
+
+
         public async Task<IActionResult> Delete(int id)
         {
             var teacher = await _context.Teachers.FindAsync(id);

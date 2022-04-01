@@ -26,7 +26,10 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputUsername1">Image</label>
+
+                                <input accept="image/*" asp-for="Image" class="form-control" id="exampleInputUsername1" placeholder="Image">
                                 <input accept="image/*" asp-for="ImageFile" class="form-control" id="exampleInputUsername1" placeholder="Image">
+
                                 <span asp-validation-for="ImageFile" class="text-danger"></span>
                             </div>
 

@@ -25,6 +25,8 @@ namespace EduHome.Controllers
             HomeVm model = new HomeVm
             {
                 Sliders = await _context.Sliders.OrderBy(s => s.Order).Take(3).ToListAsync(),
+                Events = await _context.Events.Take(4).ToListAsync(),
+                Notices=await _context.Notices.ToListAsync()
                
             };
             return View(model);

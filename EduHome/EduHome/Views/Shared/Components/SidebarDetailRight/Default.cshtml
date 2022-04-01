@@ -19,9 +19,9 @@
             <div class="single-blog-widget mb-50">
                 <h3>categories</h3>
                 <ul>
-                    @foreach (var category in Model.Categories)
+                    @foreach (var category in Model.CourseCategories)
                     {
-                        <li><a href="#">@category.Name (@category.CourseCategories.Count)</a></li>
+                        <li><a href="#">@category.Category.Name (@category.Category.CourseCategories.Count)</a></li>
                     }
 
                 </ul>
@@ -33,13 +33,13 @@
                 </div>
             </div>
             <div class="single-blog-widget mb-50">
-                <h3>latest post</h3>
+                <h3>latest course</h3>
                 @foreach (var course in Model.Courses)
                 {
                     <div class="single-post mb-30">
                         <div class="single-post-img">
                             <a asp-controller="course" asp-action="detail">
-                                <img style="width:95px;height:85px;" src="~/img/slider/@course.Image" alt="post">
+                                <img style="width:65px !important;height:55px !important;" src="~/img/slider/@course.Image" alt="post">
                                 <div class="blog-hover">
                                     <i class="fa fa-link"></i>
                                 </div>
@@ -53,7 +53,7 @@
                 }
 
             </div>
-            <div class="single-blog-widget">
+            @*<div class="single-blog-widget">
                 <h3>tags</h3>
                 <div class="single-tag">
                     @foreach (var Tag in Model.Tags)
@@ -62,7 +62,7 @@
                     }
 
                 </div>
-            </div>
+            </div>*@
         </div>
     </div>
 }
@@ -81,7 +81,7 @@ else if (ViewData["Title"] == " Blog Detail")
                     </form>
                 </div>
             </div>
-            <div class="single-blog-widget mb-50">
+            @*<div class="single-blog-widget mb-50">
                 <h3>categories</h3>
                 <ul>
                     @foreach (var category in Model.Categories)
@@ -90,7 +90,7 @@ else if (ViewData["Title"] == " Blog Detail")
                     }
 
                 </ul>
-            </div>
+            </div>*@
             <div class="single-blog-widget mb-50">
                 <div class="single-blog-banner">
                     <a asp-controller="blog" asp-action="detail" id="blog"><img src="~/img/blog/blog-img.jpg" alt="blog"></a>
@@ -118,7 +118,7 @@ else if (ViewData["Title"] == " Blog Detail")
                 }
 
             </div>
-            <div class="single-blog-widget">
+            @*<div class="single-blog-widget">
                 <h3>tags</h3>
                 <div class="single-tag">
                     @foreach (var Tag in Model.Tags)
@@ -127,7 +127,7 @@ else if (ViewData["Title"] == " Blog Detail")
                     }
 
                 </div>
-            </div>
+            </div>*@
         </div>
     </div>
 }
@@ -146,7 +146,7 @@ else if (ViewData["Title"] =="event / details")
                 </form>
             </div>
         </div>
-        <div class="single-blog-widget mb-50">
+        @*<div class="single-blog-widget mb-50">
             <h3>categories</h3>
             <ul>
                 @foreach (var category in Model.Categories)
@@ -155,7 +155,7 @@ else if (ViewData["Title"] =="event / details")
                 }
 
             </ul>
-        </div>
+        </div>*@
         <div class="single-blog-widget mb-50">
             <div class="single-blog-banner">
                 <a asp-controller="event" asp-action="detail" id="blog"><img src="~/img/blog/blog-img.jpg" alt="blog"></a>
@@ -163,7 +163,7 @@ else if (ViewData["Title"] =="event / details")
             </div>
         </div>
         <div class="single-blog-widget mb-50">
-            <h3>latest post</h3>
+            <h3>latest Event</h3>
             @foreach (var events in Model.Events)
             {
                 <div class="single-post mb-30">
@@ -177,13 +177,13 @@ else if (ViewData["Title"] =="event / details")
                     </div>
                     <div class="single-post-content">
                         <h4><a href="blog-details.html">@events.Title</a></h4>
-                        <p>  /  @events.CreatedAt.ToString("dd MMMM ,yyyy")</p>
+                        <p>@events.CreatedAt.ToString("dd MMMM ,yyyy")</p>
                     </div>
                 </div>
             }
 
         </div>
-        <div class="single-blog-widget">
+        @*<div class="single-blog-widget">
             <h3>tags</h3>
             <div class="single-tag">
                 @foreach (var Tag in Model.Tags)
@@ -192,7 +192,7 @@ else if (ViewData["Title"] =="event / details")
                 }
 
             </div>
-        </div>
+        </div>*@
     </div>
 </div>
 }
